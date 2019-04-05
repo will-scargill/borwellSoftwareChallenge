@@ -1,0 +1,63 @@
+﻿<Window x:Class="borSoftwareChallenge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:borSoftwareChallenge"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Borwell Software Challenge" Height="461" Width="557.333">
+
+    <Grid Margin="0,0,2,1">
+        <TextBox x:Name="tbRoomLength" HorizontalAlignment="Left" Height="25" Margin="10,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="tbRoomWidth" HorizontalAlignment="Left" Height="25" Margin="10,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="tbRoomHeight" HorizontalAlignment="Left" Height="25" Margin="10,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="lblRoomLength" Content="Room Length" HorizontalAlignment="Left" Height="25" Margin="10,19,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="lblRoomWidth" Content="Room Width" HorizontalAlignment="Left" Height="25" Margin="10,69,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="lblRoomHeight" Content="Room Height" HorizontalAlignment="Left" Height="27" Margin="10,119,0,0" VerticalAlignment="Top" Width="150"/>
+
+        <Label x:Name="lblRecesses" Content="Recesses (Windows/Doors)" HorizontalAlignment="Left" Height="25" Margin="7,174,0,0" VerticalAlignment="Top" Width="170"/>
+        <ListBox x:Name="lbRecesses" HorizontalAlignment="Left" Height="188" Margin="10,196,0,0" VerticalAlignment="Top" Width="150">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Remove" Click="lbRecesses_Context_Remove"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="btnAddRecess" Content="Add Recess" HorizontalAlignment="Left" Height="22" Margin="10,389,0,0" VerticalAlignment="Top" Width="150" Click="btnAddRecess_Click"/>
+        <TextBox x:Name="tbRecessWidth" HorizontalAlignment="Left" Height="25" Margin="194,254,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="tbRecessHeight" HorizontalAlignment="Left" Height="25" Margin="194,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="tbRecessDepth" HorizontalAlignment="Left" Height="25" Margin="194,354,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="tbRecessName" HorizontalAlignment="Left" Height="25" Margin="194,206,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="lblRecessWidth" Content="Recess Width" HorizontalAlignment="Left" Height="25" Margin="194,229,0,0" VerticalAlignment="Top" Width="142"/>
+        <Label x:Name="lblRecessHeight" Content="Recess Height" HorizontalAlignment="Left" Height="25" Margin="194,279,0,0" VerticalAlignment="Top" Width="142"/>
+        <Label x:Name="lblRecessDepth" Content="Recess Depth" HorizontalAlignment="Left" Height="25" Margin="194,329,0,0" VerticalAlignment="Top" Width="142"/>
+        <Label x:Name="lblRecessName" Content="Recess Name" HorizontalAlignment="Left" Height="25" Margin="194,181,0,0" VerticalAlignment="Top" Width="142"/>
+        <CheckBox x:Name="cbRecessIsDoor" Content="Is recess a door?" HorizontalAlignment="Left" Margin="204,389,0,0" VerticalAlignment="Top" Width="134"/>
+
+        <Button x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Height="125" Margin="194,44,0,0" VerticalAlignment="Top" Width="150" Click="btnCalculate_Click" FontSize="24"/>
+
+        <TextBox x:Name="tbFloorArea" IsReadOnly="True" HorizontalAlignment="Left" Height="25" Margin="370,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="lblFloorArea" Content="Floor Area in m²:" HorizontalAlignment="Left" Height="25" Margin="370,12,0,0" VerticalAlignment="Top" Width="174"/>
+        <TextBox x:Name="tbPaintRequired" IsReadOnly="True" HorizontalAlignment="Left" Height="25" Margin="373,206,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="lblPaintRequired" TextWrapping="Wrap" Text="Area of paint required for walls in m²:" HorizontalAlignment="Left" Height="40" Margin="373,171,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="tbRoomVolume" IsReadOnly="True" HorizontalAlignment="Left" Height="25" Margin="370,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="lblRoomVolume" Content="Room Volume in m³:" HorizontalAlignment="Left" Height="25" Margin="370,87,0,0" VerticalAlignment="Top" Width="142"/>
+
+        <TextBlock x:Name="txtbUnitsWarning" HorizontalAlignment="Left" Height="47" Margin="194,6,0,0" TextWrapping="Wrap" Text="Please enter all values in metres." VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="lblCredit" Content="https://github.com/will-scargill/" HorizontalAlignment="Left" Height="30" Margin="370,393,0,-4" VerticalAlignment="Top" Width="180"/>
+
+        <TextBox x:Name="tbPaintVolReq" IsReadOnly="True" HorizontalAlignment="Left" Height="25" Margin="370,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtbPaintVolReq" HorizontalAlignment="Left" Height="73" Margin="370,233,0,0" TextWrapping="Wrap" Text="Volume of paint required may vary. Typical example given in litres based on a Dulux emulsion paint:" VerticalAlignment="Top" Width="150" RenderTransformOrigin="2.293,6.596"/>
+
+
+
+
+
+    </Grid>
+</Window>
