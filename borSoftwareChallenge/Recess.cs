@@ -19,7 +19,7 @@ namespace borSoftwareChallenge
             return ((this.Depth * this.Height) * 2) + (this.Depth * this.Width);
         }
 
-        public double GetVolume()
+        public double GetVolume() // Returns the volume of the recess
         {
             return this.Depth * this.Height * this.Width;
         }

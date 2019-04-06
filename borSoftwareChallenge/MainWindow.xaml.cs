@@ -31,26 +31,21 @@ namespace borSoftwareChallenge
 
         private void btnAddRecess_Click(object sender, RoutedEventArgs e)
         {
-            if (tbRecessName.Text == "" || tbRecessWidth.Text == "" || tbRecessHeight.Text == "" || tbRecessDepth.Text == "")
-            {
-                MessageBox.Show("One or more required inputs is missing");
-            }
+            if (tbRecessName.Text == "" || tbRecessWidth.Text == "" || tbRecessHeight.Text == "" || tbRecessDepth.Text == "") // If any inputs are blank
+            { MessageBox.Show("One or more required inputs is missing"); }
             else
             {
-                try
+                try // Catchs any errors that may arise if input data is in correct format
                 {
                     bool isDoor = false;
                     if (cbRecessIsDoor.IsChecked == true)
-                    {
-                        isDoor = true;
-                    }
+                    { isDoor = true; }
                     else if (cbRecessIsDoor.IsChecked == false)
-                    {
-                        isDoor = false;
-                    }
+                    { isDoor = false; }
                     Recess r = new Recess(tbRecessName.Text, tbRecessWidth.Text, tbRecessHeight.Text, tbRecessDepth.Text, isDoor); // Create new recess object
                     recesses.Add(r); // Add inputted data to recess list as recess object
                     lbRecesses.Items.Add(r); // Add inputted data to listbox as recess object
+                    // Resetting all input fields
                     tbRecessName.Text = "";
                     tbRecessHeight.Text = "";
                     tbRecessWidth.Text = "";
@@ -58,16 +53,14 @@ namespace borSoftwareChallenge
                     cbRecessIsDoor.IsChecked = false;
                 }
                 catch
-                {
-                    MessageBox.Show("One or more inputs was in an incorrect format");
-                }
+                { MessageBox.Show("One or more inputs was in an incorrect format"); }
                 
             }
         }
 
         private void lbRecesses_Context_Remove(object sender, RoutedEventArgs e)
         {
-            if (lbRecesses.SelectedItem == null) { }
+            if (lbRecesses.SelectedItem == null) { } // If user attempts to remove non-existant item, do nothing
             else
             {
                 Recess selectedRecess = (Recess)lbRecesses.SelectedItem; // Get selected Recess object
@@ -77,21 +70,15 @@ namespace borSoftwareChallenge
         }
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
-        {   
-            if (tbRoomHeight.Text == "" || tbRoomLength.Text == "" || tbRoomWidth.Text == "")
-            {
-                MessageBox.Show("One or more required inputs is missing");
-            }
+        {
+            if (tbRoomHeight.Text == "" || tbRoomLength.Text == "" || tbRoomWidth.Text == "") // If any inputs are blank
+            { MessageBox.Show("One or more required inputs is missing"); }
             else
             {
-                try
-                {
-                    Calculations.FillOutputs();
-                }
+                try // Catchs any errors that may arise if input data is in correct format
+                { Calculations.FillOutputs(); }
                 catch
-                {
-                    MessageBox.Show("One or more inputs was in an incorrect format");
-                }
+                { MessageBox.Show("One or more inputs was in an incorrect format"); }
             }
 
             
