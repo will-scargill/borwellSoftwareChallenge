@@ -2,7 +2,7 @@
 
 https://borwell.com/career/
 
-A program to calculate floor area, room volume, and required area coverage of paint for a room given it's dimensions.
+A program to calculate floor area, room volume, and required wall area coverage of paint for a room given its dimensions.
 
 ## Build Instructions
 
@@ -48,13 +48,13 @@ If the recess is a door, check the `Is recess a door?` checkbox
 
 Then click `Add Recess`
 
-The recess will be displayed via it's name in the listbox. To remove a recess, right click the recess you want to remove and click `Remove`
+The recess will be displayed via its name in the listbox. To remove a recess, right click the recess you want to remove and click `Remove`
 
-- If the recess is a door, the floor area of the recess is added to the overall floor area calculated. If not, and treated as a window), the floor area is not added
+- If the recess is a door, the floor area of the recess is added to the overall floor area calculated. If not (and thereford treated as a window) the floor area is not added
 
-- For all recesses the side and upper area is added to the paint coverage area, it is assumed that all windows have a window sill which does not use wall paint
+- For all recesses the sides and upper area is added to the paint coverage area, it is assumed that all windows have a window sill which does not use wall paint
 
-- If a recess has a depth of zero, E.G an internal door, no additional paint coverage area is calculated
+- If a recess has a depth of zero, E.G an internal door rather than a patio door, no additional paint coverage area is calculated
 
 #### Calculating values
 
@@ -62,7 +62,7 @@ Once all desired dimensions have been entered, click the `Calculate` button
 
 The right hand text boxes will then display the calculated information
 
-*Value of paint in litres calculated is based on average coverage of a Dulux emulsion paint where 32m² is equal to 2.5 litres*
+*Value of paint in litres calculated is based on average coverage of a Dulux emulsion paint where 32m² coverage requires 2.5 litres*
 
 #### Calculating values for non-quadrilateral room (E.G. L-Shaped room)
 
