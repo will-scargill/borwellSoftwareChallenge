@@ -2,7 +2,7 @@
 
 https://borwell.com/career/
 
-A program to calculate area, volume, and required paint of a room given it's dimensions.
+A program to calculate floor area, room volume, and required area coverage of paint for a room given it's dimensions.
 
 ## Build Instructions
 
@@ -50,6 +50,12 @@ Then click `Add Recess`
 
 The recess will be displayed via it's name in the listbox. To remove a recess, right click the recess you want to remove and click `Remove`
 
+- If the recess is a door, the floor area of the recess is added to the overall floor area calculated. If not, and treated as a window), the floor area is not added
+
+- For all recesses the side and upper area is added to the paint coverage area, it is assumed that all windows have a window sill which does not use wall paint
+
+- If a recess has a depth of zero, E.G an internal door, no additional paint coverage area is calculated
+
 #### Calculating values
 
 Once all desired dimensions have been entered, click the `Calculate` button
@@ -57,6 +63,30 @@ Once all desired dimensions have been entered, click the `Calculate` button
 The right hand text boxes will then display the calculated information
 
 *Value of paint in litres calculated is based on average coverage of a Dulux emulsion paint where 32m² is equal to 2.5 litres*
+
+#### Calculating values for non-quadrilateral room (E.G. L-Shaped room)
+
+##### Example
+
+![https://imgur.com/a/rBtcNtw](https://i.imgur.com/swWgmzD.png)
+
+Take the room displayed above. To calculate all required values, you must calculate `Main Room` and `Alcove` seperately and then sum the values
+
+1. Enter dimensions of `Main Room`
+
+2. Add `Alcove` entrance (A to B) as a door recess with a depth of 0 and height of `Main Room` (Displayed below)
+
+![https://imgur.com/a/QiVnuvU](https://i.imgur.com/KG7J2Ce.png)
+
+3. Record values given
+
+4. Enter dimensions of `Alcove`
+
+5. Add `Alcove` entrance (A to B) as a door recess with a depth of 0 and height of `Main Room` (Displayed below)
+
+![https://imgur.com/a/krhAFCt](https://i.imgur.com/F8kPab0.png)
+
+6. Add values given to previously recorded values
 
 
 
